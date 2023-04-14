@@ -1,8 +1,8 @@
 // Following packages needed for this Generator
 const Examples = require('Examples');
-const Example1 = require('Examples\example1Triangle.svg')
-const Example2 = require('Examples\example2Circle.svg')
-const Example3 = require('Examples\example3Square.svg')
+const Example1 = require('.\example1Triangle.svg')
+const Example2 = require('.\example2Circle.svg')
+const Example3 = require('.\example3Square.svg')
 const inquirer = require('inquirer');
 const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
