@@ -1,8 +1,7 @@
 //Packages that are needed for the code
 const inquirer = require('inquirer');
 const filesystem = require('graceful-fs');
-const { Triangle, Square, Circle } = require("Lib\shapes.js");
-const { default: Choices } = require('inquirer/lib/objects/choices');
+const { Triangle, Square, Circle } = require("./Lib/shapes");
 
 class Svg {
   constructor() {
@@ -48,8 +47,29 @@ const questions = [
         type:"list",
         name:"pixel-image",
         message:"Choose which pixel Image you would like?:",
-        choices:("Triangle, Square, Triangle"),
+        choices: ["Triangle", "Square", "Circle"]
+
     },
 ];
 
+// Prompt the user with the questions and process their answers
+inquirer.prompt(questions).then((answers) => {
+    const svg = new Svg();
+    svg.setTextElement(answers.text, answers["text-color"]);
+    switch (answers["pixel-image"]) {
+      case "Triangle":
+        svg.setShapeElement(new Triangle(150, 75, 50, answers.shape));
+        break;
+      case "Square":
+        svg.setShapeElement(new Square(100, 50, 100, answers.shape));
+        break;
+      case "Circle":
+        svg.setShapeElement(new Circle(150, 75, 50, answers.shape));
+        break;
+    }
+    filesystem.writeFile("output.svg", svg.render(), (err) => {
+      if (err) throw err;
+      console.log("SVG file created successfully!");
+    });
+  });
   
