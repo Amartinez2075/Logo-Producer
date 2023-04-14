@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const filesystem = require('graceful-fs');
 const { Triangle, Square, Circle } = require("./shapes.js");
+const { default: Choices } = require('inquirer/lib/objects/choices');
 
 class Svg {
   constructor() {
@@ -22,6 +23,30 @@ class Svg {
   }
 }
 
-
+//Array of questions for the user's input
+const questions = [
+    {
+//first display message in node.js
+        type:"input",
+        name:"text",
+        message:"Text: Enter up to (3) Characters:",
+    },
+    {
+        type:"input",
+        name:"text-color",
+        message:"Text Color: Enter a color (Or a hexadecimal number):",
+    },
+    {
+        type:"input",
+        name:"shape",
+        message:"Shape Color: Enter a color (Or a hexadecimal number):",
+    },
+    {
+        type:"list",
+        name:"pixel-image",
+        message:"Choose which pixel Image you would like?:",
+        choices:("Triangle, Square, Triangle"),
+    },
+];
 
   
