@@ -1,17 +1,40 @@
-// Following packages needed for this Generator
-const Examples = require('Examples');
-const Example1 = require('.\example1Triangle.svg')
-const Example2 = require('.\example2Circle.svg')
-const Example3 = require('.\example3Square.svg')
-const inquirer = require('inquirer');
-const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
-const numberChars = "0123456789";
-const specialChars = "!@#$%^&*()_+{}[]|\\:;\"',.<>/?";
+class Triangle {
+  constructor(x, y, size, color) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.color = color;
+  }
 
-const messages = [
-    "Hello World!",
-    "Welcome to Node.js",
-    "This is a test message"
-  ];
-  
+  render() {
+    return `<polygon points="${this.x},${this.y} ${this.x + this.size},${this.y} ${this.x + (this.size / 2)},${this.y + this.size}" fill="${this.color}" />`;
+  }
+}
+
+class Square {
+  constructor(x, y, size, color) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.color = color;
+  }
+
+  render() {
+    return `<rect x="${this.x}" y="${this.y}" width="${this.size}" height="${this.size}" fill="${this.color}" />`;
+  }
+}
+
+class Circle {
+  constructor(x, y, size, color) {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.color = color;
+  }
+
+  render() {
+    return `<circle cx="${this.x + (this.size / 2)}" cy="${this.y + (this.size / 2)}" r="${this.size / 2}" fill="${this.color}" />`;
+  }
+}
+
+module.exports = { Triangle, Square, Circle };
