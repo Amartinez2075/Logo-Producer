@@ -1,7 +1,7 @@
 //Packages that are needed for the code
 const inquirer = require('inquirer');
 const filesystem = require('graceful-fs');
-const { Triangle, Square, Circle } = require("./shapes.js");
+const { Triangle, Square, Circle } = require("Lib\shapes.js");
 const { default: Choices } = require('inquirer/lib/objects/choices');
 
 class Svg {
