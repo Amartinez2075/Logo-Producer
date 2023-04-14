@@ -32,16 +32,19 @@ const questions = [
         message:"Text: Enter up to (3) Characters:",
     },
     {
+//second display message in node.js
         type:"input",
         name:"text-color",
         message:"Text Color: Enter a color (Or a hexadecimal number):",
     },
     {
+//third display message in node.js
         type:"input",
         name:"shape",
         message:"Shape Color: Enter a color (Or a hexadecimal number):",
     },
     {
+//fourth display message in node.js
         type:"list",
         name:"pixel-image",
         message:"Choose which pixel Image you would like?:",
