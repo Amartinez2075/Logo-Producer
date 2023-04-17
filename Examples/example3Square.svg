@@ -1,8 +1,9 @@
+<!-- This is an SVG file with the following attributes -->
 <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-  /* background */
+  <!-- A yellow rectangle is used as a background for the SVG -->
   <rect width="300px" height="200px" fill="yellow" />
-  /* shape itself */
+  <!-- A black rectangle is used as the main shape of the SVG, with a 5px wide black border -->
   <rect x="10" y="10" width="280px" height="180px" stroke="black" fill="black" stroke-width="5"/>
-  /* font itself */
+  <!-- The text "Hello World!" is displayed in red, using the Arial font at size 20 and positioned at coordinates (50, 30) -->
   <text x="50" y="30" font-size="20" font-family="Arial" fill="red" text-anchor>Hello World!</text>
 </svg>
