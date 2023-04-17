@@ -7,7 +7,7 @@ class Triangle {
   }
 
   render() {
-    return `<polygon points="${this.x},${this.y} ${this.x + this.size},${this.y} ${this.x + (this.size / 2)},${this.y + this.size}" fill="${this.color}" />`;
+    return `<polygon points="150, 18 244, 182 56, 182" fill="${this.color}" />`;
   }
 }
 
@@ -20,7 +20,7 @@ class Square {
   }
 
   render() {
-    return `<rect x="${this.x}" y="${this.y}" width="${this.size}" height="${this.size}" fill="${this.color}" />`;
+    return `<rect x="50" y="50" width="200" height="200" fill="${this.color}" />`;
   }
 }
 
