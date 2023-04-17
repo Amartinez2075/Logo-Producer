@@ -55,7 +55,7 @@ inquirer.prompt(questions).then((answers) => {
       svg.setShapeElement(new Triangle(0, 0, 0,answers["shape-color"]));
       break;
     case "Square":
-      svg.setShapeElement(new Square(50, 50, 200, 200, answers["shape-color"]));
+      svg.setShapeElement(new Square(0, 0, 0, 0, answers["shape-color"]));
       break;
     case "Circle":
       svg.setShapeElement(new Circle(0,0,0, answers["shape-color"]));
