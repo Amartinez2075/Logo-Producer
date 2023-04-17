@@ -14,7 +14,7 @@ class Svg {
     </svg>`;
   }
   setTextElement(text, color) {
-    this.textElement = `<text x="150" y="125" font-size="30" text-anchor="middle" fill="${color}">${text}</text>`;
+    this.textElement = `<text x="150" y="160" font-size="30" text-anchor="middle" fill="${color}">${text}</text>`;
   }
   setShapeElement(shape) {
     this.shapeElement = shape.render();
@@ -27,6 +27,12 @@ const questions = [
     type: "input",
     name: "text",
     message: "Text: Enter up to (3) Characters:",
+    validate: function (input) {
+      if (input.length > 3) {
+        return "Please enter up to 3 characters.";
+      }
+      return true;
+    },
   },
   {
     type: "input",
@@ -58,8 +64,7 @@ inquirer.prompt(questions).then((answers) => {
       svg.setShapeElement(new Square(0, 0, 0, answers["shape-color"]));
       break;
     case "Circle":
-      svg.setShapeElement(new Circle(0,0,0, answers["shape-color"]));
-      break;
+      svg.setShapeElement(new Circle(100,100,100, answers["shape-color"]));      break;
   }
   fs.writeFile("output.svg", svg.render(), (err) => {
     if (err) throw err;
