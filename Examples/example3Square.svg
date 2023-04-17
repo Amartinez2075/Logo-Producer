@@ -4,5 +4,5 @@
   /* shape itself */
   <rect x="10" y="10" width="280px" height="180px" stroke="black" fill="black" stroke-width="5"/>
   /* font itself */
-  <text x="50" y="30" font-size="20" font-family="Arial" fill="red">Hello World!</text>
+  <text x="50" y="30" font-size="20" font-family="Arial" fill="red" text-anchor>Hello World!</text>
 </svg>
