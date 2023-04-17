@@ -66,7 +66,7 @@ inquirer.prompt(questions).then((answers) => {
     case "Circle":
       svg.setShapeElement(new Circle(100,100,100, answers["shape-color"]));      break;
   }
-  fs.writeFile("output.svg", svg.render(), (err) => {
+  fs.writeFile("logo.svg", svg.render(), (err) => {
     if (err) throw err;
     console.log("SVG file created successfully!");
   });
